@@ -1,0 +1,330 @@
+sections:
+  aiml_integration_capabilities:
+    content_focus: AI enablement, automation, self-improvement mechanisms
+    content_types:
+    - ai_requirements
+    - ml_integration
+    - automation_specs
+    - intelligent_features
+    keywords:
+    - AI
+    - ML
+    - machine learning
+    - artificial intelligence
+    - automation
+    - algorithm
+    priority: 7
+    title: AI/ML Integration & Advanced Capabilities
+    triggers:
+    - AI integration
+    - ML models
+    - automation
+    - self-improvement
+  business_context_market_analysis:
+    content_focus: Market research, competitive landscape, business case
+    content_types:
+    - market_research
+    - competitive_analysis
+    - business_case
+    - risk_assessment
+    keywords:
+    - market
+    - competitive
+    - business
+    - revenue
+    - analysis
+    - competition
+    - landscape
+    priority: 3
+    title: Business Context & Market Analysis
+    triggers:
+    - market segmentation
+    - competitive analysis
+    - business case
+    - revenue strategy
+  dependencies_assumptions_constraints:
+    content_focus: Critical success factors, blockers, external dependencies
+    content_types:
+    - dependency_specs
+    - assumption_documentation
+    - constraint_definitions
+    - external_dependencies
+    keywords:
+    - dependencies
+    - assumptions
+    - constraints
+    - blockers
+    - external
+    - limitations
+    priority: 14
+    title: Dependencies, Assumptions & Constraints
+    triggers:
+    - dependencies
+    - assumptions
+    - constraints
+    - external dependencies
+  development_methodology_planning:
+    content_focus: Agile implementation, resource planning, timeline management
+    content_types:
+    - methodology_specs
+    - project_plans
+    - resource_requirements
+    - timeline_specifications
+    keywords:
+    - development
+    - methodology
+    - agile
+    - planning
+    - project
+    - timeline
+    - resources
+    priority: 10
+    title: Development Methodology & Project Planning
+    triggers:
+    - development methodology
+    - project planning
+    - agile
+    - resource planning
+  document_foundation_context:
+    content_focus: Document control, definitions, compliance frameworks
+    content_types:
+    - document_control
+    - definitions
+    - standards_references
+    - change_logs
+    keywords:
+    - document
+    - version
+    - control
+    - definitions
+    - glossary
+    - compliance
+    - standards
+    - framework
+    priority: 1
+    title: Document Foundation & Context
+    triggers:
+    - FedRAMP
+    - ICAM
+    - FGAC
+    - STIG
+    - PKI
+    - STANAG
+    - UCO
+    - JSON-LD
+    - version control
+  executive_summary_strategic_vision:
+    content_focus: Business strategy, value propositions, high-level goals
+    content_types:
+    - strategic_objectives
+    - value_propositions
+    - success_metrics
+    keywords:
+    - strategy
+    - vision
+    - mission
+    - goals
+    - objectives
+    - value
+    - proposition
+    - executive
+    priority: 2
+    title: Executive Summary & Strategic Vision
+    triggers:
+    - strategic objectives
+    - business alignment
+    - value proposition
+    - mission statement
+  functional_requirements_features:
+    content_focus: Feature definitions, user stories, acceptance criteria
+    content_types:
+    - functional_requirements
+    - user_stories
+    - acceptance_criteria
+    - feature_specs
+    keywords:
+    - functional
+    - requirements
+    - features
+    - user stories
+    - acceptance
+    - criteria
+    - specifications
+    priority: 5
+    title: Functional Requirements & Feature Specifications
+    triggers:
+    - core features
+    - user stories
+    - acceptance criteria
+    - business rules
+  governance_compliance_risk:
+    content_focus: Regulatory compliance, risk mitigation, governance frameworks
+    content_types:
+    - compliance_requirements
+    - risk_assessments
+    - governance_frameworks
+    - regulatory_specs
+    keywords:
+    - governance
+    - compliance
+    - risk
+    - regulatory
+    - mitigation
+    - framework
+    priority: 13
+    title: Governance, Compliance & Risk Management
+    triggers:
+    - regulatory compliance
+    - risk management
+    - governance
+    - compliance framework
+  launch_strategy_gtm:
+    content_focus: Launch planning, market entry, post-launch operations
+    content_types:
+    - launch_plans
+    - gtm_strategy
+    - rollout_specifications
+    - market_entry_plans
+    keywords:
+    - launch
+    - go-to-market
+    - GTM
+    - rollout
+    - deployment
+    - market entry
+    priority: 12
+    title: Launch Strategy & Go-to-Market
+    triggers:
+    - launch strategy
+    - go-to-market
+    - rollout plan
+    - market entry
+  non_functional_requirements:
+    content_focus: Performance, security, compliance, scalability requirements
+    content_types:
+    - performance_specs
+    - security_requirements
+    - compliance_standards
+    - scalability_requirements
+    keywords:
+    - performance
+    - security
+    - scalability
+    - compliance
+    - availability
+    - maintainability
+    priority: 6
+    title: Non-Functional Requirements (NFRs)
+    triggers:
+    - performance requirements
+    - security requirements
+    - compliance standards
+    - scalability
+  quality_assurance_testing:
+    content_focus: Testing frameworks, quality gates, acceptance criteria
+    content_types:
+    - testing_requirements
+    - quality_standards
+    - test_strategies
+    - validation_criteria
+    keywords:
+    - quality
+    - testing
+    - QA
+    - test
+    - validation
+    - verification
+    priority: 11
+    title: Quality Assurance & Testing Strategy
+    triggers:
+    - testing strategy
+    - quality gates
+    - test plans
+    - validation criteria
+  success_metrics_performance:
+    content_focus: KPIs, measurement frameworks, analytics strategy
+    content_types:
+    - business_metrics
+    - product_kpis
+    - performance_metrics
+    - analytics_requirements
+    keywords:
+    - metrics
+    - KPI
+    - measurement
+    - analytics
+    - performance
+    - success
+    priority: 9
+    title: Success Metrics & Performance Measurement
+    triggers:
+    - success metrics
+    - KPIs
+    - measurement framework
+    - analytics
+  supporting_documentation_appendices:
+    content_focus: Reference materials, detailed artifacts, supplementary data
+    content_types:
+    - reference_materials
+    - supplementary_documentation
+    - detailed_artifacts
+    - appendices
+    keywords:
+    - documentation
+    - appendix
+    - reference
+    - supplementary
+    - artifacts
+    - supporting
+    priority: 15
+    title: Supporting Documentation & Appendices
+    triggers:
+    - reference materials
+    - supporting documentation
+    - appendices
+    - detailed artifacts
+  technical_architecture_implementation:
+    content_focus: System architecture, technology decisions, deployment strategy
+    content_types:
+    - architecture_specs
+    - technology_decisions
+    - deployment_requirements
+    - integration_specs
+    keywords:
+    - architecture
+    - technical
+    - technology
+    - implementation
+    - deployment
+    - infrastructure
+    priority: 8
+    title: Technical Architecture & Implementation
+    triggers:
+    - system architecture
+    - technology stack
+    - deployment strategy
+    - integration points
+  user_research_experience_design:
+    content_focus: Personas, user journeys, accessibility requirements
+    content_types:
+    - user_personas
+    - user_journeys
+    - accessibility_requirements
+    - ux_design
+    keywords:
+    - user
+    - persona
+    - journey
+    - experience
+    - accessibility
+    - design
+    - UX
+    - UI
+    priority: 4
+    title: User Research & Experience Design
+    triggers:
+    - user personas
+    - user journey
+    - accessibility standards
+    - user research
+template_path: templates/PRD-template.md

@@ -1,10 +1,33 @@
 markdownExploder: true
 prd:
-  prdFile: docs/prd.md
+  # DEPRECATED: Legacy PRD generation - use templateBasedPRD instead
+  prdFile: docs/prd.md  
   prdVersion: v4
   prdSharded: true
   prdShardedLocation: docs/prd
   epicFilePattern: epic-{n}*.md
+templateBasedPRD:
+  # MANDATORY: Template-based PRD generation system
+  templateFile: templates/PRD-template.md
+  templateMode: enforced_structure
+  outputPattern: docs/prd-v{n}.md
+  currentVersion: v0
+  versioningEnabled: true
+  generationDirectory: .ai/prd-generation
+  archiveDirectory: docs/prd-archive
+  classificationSystem:
+    confidenceThreshold: 0.3
+    classificationScript: utilities/prd-template-processor/classification_system.py
+    validationScript: utilities/prd-template-processor/template_validator.py
+    versionManagerScript: utilities/prd-template-processor/version_manager.py
+  errorHandling:
+    uncategorizableContent: flag_for_human_review
+    templateViolations: halt_and_report
+    versionConflicts: create_new_version
+  qualityGates:
+    minimumValidationScore: 0.8
+    requiredSections: 15
+    structureComplianceRequired: true
 architecture:
   architectureFile: docs/architecture.md
   architectureVersion: v4

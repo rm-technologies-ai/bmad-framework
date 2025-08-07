@@ -85,9 +85,46 @@ persona:
 # All commands require * prefix when used (e.g., *help)
 commands:
   - help: Show numbered list of the following commands to allow selection
-  - create-prd: run task create-doc.md with template prd-tmpl.yaml
+  - create-template-prd: Generate PRD using mandatory templates/PRD-template.md structure
+  - create-prd: run task create-doc.md with template prd-tmpl.yaml (DEPRECATED - use create-template-prd)
   - create-brownfield-prd: run task create-doc.md with template brownfield-prd-tmpl.yaml
   - create-brownfield-epic: run task brownfield-create-epic.md
   - create-brownfield-story: run task brownfield-create-story.md
   - create-epic: Create epic for brownfield projects (task brownfield-create-epic)
-  - create-story: Create user story from requirements (task brownfield-create-sto
+  - create-story: Create user story from requirements (task brownfield-create-story)
+  - classify-content: Classify content to PRD template sections using classification system
+  - validate-prd-template: Validate PRD structure against mandatory template
+  - review-uncategorized: Review content flagged for human categorization
+  - doc-out: Output full document to current destination file
+  - shard-prd: run the task shard-doc.md for the provided prd.md (ask if not found)
+  - correct-course: execute the correct-course task
+  - generate-extraction-plan: Generate extraction plan for source document (requires document path)
+  - execute-extraction-plan: Execute approved extraction plan (requires plan file path)
+  - review-extraction-plan: Review extraction plan and show approval status
+  - approve-operation: Approve specific operation in extraction plan
+  - yolo: Toggle Yolo Mode
+  - exit: Exit (confirm)
+dependencies:
+  tasks:
+    - create-template-based-prd.md
+    - create-doc.md
+    - correct-course.md
+    - create-deep-research-prompt.md
+    - brownfield-create-epic.md
+    - brownfield-create-story.md
+    - execute-checklist.md
+    - shard-doc.md
+  templates:
+    - PRD-template.md (mandatory structure template)
+    - prd-tmpl.yaml (legacy - deprecated)
+    - brownfield-prd-tmpl.yaml
+  checklists:
+    - pm-checklist.md
+    - change-checklist.md
+  data:
+    - technical-preferences.md
+  utilities:
+    - prd-template-processor/classification_system.py
+    - prd-template-processor/template_validator.py
+    - prd-template-processor/version_manager.py
+```
