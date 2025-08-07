@@ -1,0 +1,31 @@
+markdownExploder: true
+prd:
+  prdFile: docs/prd.md
+  prdVersion: v4
+  prdSharded: true
+  prdShardedLocation: docs/prd
+  epicFilePattern: epic-{n}*.md
+architecture:
+  architectureFile: docs/architecture.md
+  architectureVersion: v4
+  architectureSharded: true
+  architectureShardedLocation: docs/architecture
+customTechnicalDocuments: null
+documentIngestion:
+  pdfConversionRequired: true
+  sourceDocumentsPath: input-documents
+  convertedDocumentsPath: input-documents-converted-to-md
+  conversionScript: utilities/pdf-to-md-converter/convert_pdf_to_md.py
+  pipelineScript: utilities/pdf-ingestion-pipeline/convert_pdf.py
+  versioningEnabled: true
+  latestVersionPriority: true
+  validationRequired: true
+  validationScript: utilities/validation-scripts/validate_conversion.py
+devLoadAlwaysFiles:
+  - docs/architecture/coding-standards.md
+  - docs/architecture/tech-stack.md
+  - docs/architecture/source-tree.md
+  - docs/pdf-ingestion-rules.md
+devDebugLog: .ai/debug-log.md
+devStoryLocation: docs/stories
+slashPrefix: BMad

@@ -2,7 +2,13 @@
   "permissions": {
     "allow": [
       "Bash(find:*)",
-      "Bash(git submodule:*)"
+      "Bash(git submodule:*)",
+      "Bash(conda list:*)",
+      "Bash(npx bmad-method:*)",
+      "Bash(mkdir:*)",
+      "Bash(chmod:*)",
+      "Bash(grep:*)",
+      "Bash(./utilities/validation-scripts/run_tests.sh:*)"
     ],
     "deny": []
   }
