@@ -163,17 +163,11 @@ input-documents-converted-to-md/    # Converted MDs (mirror hierarchy)
 
 #### Manual Conversion
 ```bash
-# Convert single PDF
-python3 utilities/pdf-ingestion-pipeline/convert_pdf.py input-documents/document.pdf
+# Use /pdf-conversion-task command in Claude Code
+/pdf-conversion-task
 
-# Batch convert all PDFs
-./utilities/pdf-ingestion-pipeline/batch_converter.sh
-
-# Force reconversion
-python3 utilities/pdf-ingestion-pipeline/convert_pdf.py input-documents/document.pdf --force
-
-# Get latest version path
-python3 utilities/pdf-ingestion-pipeline/convert_pdf.py input-documents/document.pdf --latest
+# Or reference PDF directly in agent workflows - auto-converts
+/analyst Process input-documents/document.pdf
 ```
 
 #### Validation Commands
@@ -193,8 +187,8 @@ python3 utilities/validation-scripts/validate_conversion.py --all --summary
 #### PDF Reference Handling
 - **Detection**: Agents scan user input for `.pdf` file references
 - **Validation**: Check if source PDF exists in `input-documents/`
-- **Conversion**: Auto-trigger conversion pipeline if needed  
-- **Processing**: Reference converted Markdown file instead
+- **Conversion**: Use Claude Code Read tool for direct PDF extraction
+- **Processing**: Auto-generate versioned Markdown files in `input-documents-converted-to-md/`
 - **Error Handling**: Graceful failure with user guidance
 
 #### Configuration Integration
@@ -213,10 +207,10 @@ All agents load PDF ingestion rules from `docs/pdf-ingestion-rules.md` during st
 # 1. Place PDF in source directory
 cp project-requirements.pdf input-documents/specs/
 
-# 2. Reference in agent interaction - auto-converts
+# 2. Reference in agent interaction - Claude Code auto-extracts
 /pm Create PRD based on input-documents/specs/project-requirements.pdf
 
-# 3. Agent automatically uses: input-documents-converted-to-md/specs/project-requirements.md
+# 3. Agent automatically creates: input-documents-converted-to-md/specs/project-requirements.md
 ```
 
 #### Quality Assurance

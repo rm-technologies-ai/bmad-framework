@@ -1,12 +1,12 @@
 # /pdf-conversion-task Command
 
-## PDF Conversion Task for Claude Integration
+## PDF Conversion Task - Claude Code Integration
 
-This task handles PDF-to-Markdown conversion within the Claude environment.
+This task handles PDF-to-Markdown conversion using Claude Code's internal PDF processing capabilities.
 
 ### Task Definition
 
-**Purpose**: Convert PDF documents to Markdown format for BMAD agent ingestion
+**Purpose**: Convert PDF documents to Markdown format using Claude's Read tool for direct PDF ingestion
 
 **Trigger Conditions**:
 - User references a PDF file
@@ -18,29 +18,30 @@ This task handles PDF-to-Markdown conversion within the Claude environment.
 #### 1. PDF Detection and Validation
 ```yaml
 input_validation:
-  - check_pdf_file_exists()
-  - validate_pdf_accessibility()
+  - check_pdf_file_exists_in_filesystem()
+  - validate_pdf_path_format()
   - confirm_source_directory_location()
 ```
 
 #### 2. Existing Conversion Check
 ```yaml
 conversion_check:
-  - scan_converted_directory()
+  - scan_converted_directory_for_existing_md()
   - identify_existing_versions()
-  - determine_latest_version()
+  - determine_latest_version_number()
   - report_conversion_status()
 ```
 
-#### 3. Conversion Execution
+#### 3. Claude Code PDF Extraction
 ```yaml
 conversion_process:
   when: no_existing_conversion OR force_reconvert
   actions:
+    - use_read_tool_for_pdf_extraction()
+    - format_extracted_content_as_markdown()
     - calculate_output_path_with_version()
-    - execute_conversion_pipeline()
+    - write_markdown_file()
     - validate_conversion_quality()
-    - report_conversion_results()
 ```
 
 #### 4. Quality Validation
@@ -89,10 +90,10 @@ completion:
 ```markdown
 When processing documents:
 1. Check if document is PDF format
-2. If PDF: execute /pdf-conversion-task
-3. Wait for conversion completion
-4. Use converted Markdown path
-5. Proceed with agent workflow
+2. If PDF: Use Read tool to extract PDF content directly
+3. Format content as structured Markdown
+4. Write to versioned file in input-documents-converted-to-md/
+5. Proceed with agent workflow using converted file
 ```
 
 #### Command Parameters
@@ -100,21 +101,22 @@ When processing documents:
 - `force_reconvert`: Boolean to force new conversion
 - `quality_threshold`: Minimum quality score (optional)
 
-### Configuration Dependencies
+### Claude Code Tool Integration
 
-#### Required Files
-- `utilities/pdf-to-md-converter/convert_pdf_to_md.py`
-- `utilities/pdf-ingestion-pipeline/convert_pdf.py`
-- `utilities/validation-scripts/validate_conversion.py`
-- `docs/pdf-ingestion-rules.md`
+#### Required Tools
+- `Read` - Claude Code's PDF processing tool
+- `Write` - For creating converted Markdown files
+- `LS` - For directory validation
+- `Glob` - For finding existing conversions
 
 #### Configuration Settings
 ```yaml
 documentIngestion:
-  pdfConversionRequired: true
+  pdfConversionMethod: claude_code_read_tool
   sourceDocumentsPath: input-documents
   convertedDocumentsPath: input-documents-converted-to-md
   latestVersionPriority: true
+  autoVersionIncrement: true
 ```
 
 ### Output Format
